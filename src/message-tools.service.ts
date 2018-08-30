@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Injectable()
 export class MessageToolsService {
@@ -20,6 +21,8 @@ export class MessageToolsService {
     this.messageSend.next(message);
 
     this.winInstance.postMessage(message, window.location.href);
+
+    return this.messageSend$.pipe(filter(obj => obj.id === message.id));
   }
 }
 
