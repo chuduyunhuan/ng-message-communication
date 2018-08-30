@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class MessageToolsService {
-  constructor() {}
+  constructor(private readonly winInstance: Window) {}
 
   private messageSend = new Subject<MessageCommunication>();
   messageSend$ = this.messageSend.asObservable();
@@ -18,9 +18,8 @@ export class MessageToolsService {
 
   sendMessage(message: MessageCommunication) {
     this.messageSend.next(message);
-    if (window.parent) {
-      window.parent.postMessage(message, window.parent.location.href);
-    }
+
+    this.winInstance.postMessage(message, window.location.href);
   }
 }
 
