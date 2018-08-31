@@ -1,6 +1,6 @@
 {
   "name": "ng-message-communication",
-  "version": "5.0.0",
+  "version": "6.0.4",
   "description": "just some test",
   "main": "index.ts",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/chuduyunhuan/ng-message-communication#readme",
   "dependencies": {
-    "@angular/core": "4.4.4",
-    "rxjs": "5.5.2"
+    "@angular/core": "^6.0.4",
+    "rxjs": "^6.2.0"
   }
 }
