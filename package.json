@@ -1,6 +1,6 @@
 {
   "name": "ng-message-communication",
-  "version": "4.4.4",
+  "version": "5.0.0",
   "description": "just some test",
   "main": "index.ts",
   "scripts": {
